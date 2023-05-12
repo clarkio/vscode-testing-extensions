@@ -37,6 +37,9 @@ jobs:
           run: npm test
 
   build:
+    permissions:
+      contents: write
+      packages: write
     # Build the extension for all platforms
     # This will only run on push to main
     # Note: PRs that get merged into main count as a push too
