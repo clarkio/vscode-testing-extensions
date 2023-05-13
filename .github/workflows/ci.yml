@@ -88,20 +88,22 @@ jobs:
         with:
           node-version: 18
 
-      - if: matrix.target != 'universal'
-        name: Install dependencies (with binaries)
-        run: npm ci
-        env:
-          npm_config_arch: ${{ matrix.npm_config_arch }}
-
-      - if: matrix.target == 'universal'
-        name: Install dependencies (without binaries)
+      # Uncomment if you use matrix: include: instead of matrix: os: above
+      # - if: matrix.target != 'universal'
+      #   name: Install dependencies (with binaries)
+      #   run: npm ci
+      #   env:
+      #     npm_config_arch: ${{ matrix.npm_config_arch }}
+      # - if: matrix.target == 'universal'
+      - name: Install dependencies (without binaries)
         run: npm ci
 
         # semantic release package the extension
       - run: npx semantic-release --extends ./package.release.config.js
         env:
-          VSCE_TARGET: ${{ matrix.target }}
+          # Uncomment VSCE_TARGER if you use matrix: include: instead
+          # of matrix: os: above
+          # VSCE_TARGET: ${{ matrix.target }}
           # All tokens are required since semantic-release needs to validate them
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
@@ -110,7 +112,9 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: ${{ matrix.target }}
+          # Uncomment name if you use matrix: include: instead
+          # of matrix: os: above
+          # name: ${{ matrix.target }}
           path: '*.vsix'
 
   release:
