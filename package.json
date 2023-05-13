@@ -53,5 +53,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/clarkio/vscode-testing-extensions.git"
+  },
+  "vsce": {
+    "pre-release": true
   }
 }

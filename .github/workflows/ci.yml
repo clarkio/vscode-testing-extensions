@@ -46,36 +46,39 @@ jobs:
     if: github.event_name == 'push'
     strategy:
       matrix:
-        include:
-          - os: windows-latest
-            target: win32-x64
-            npm_config_arch: x64
-          - os: windows-latest
-            target: win32-ia32
-            npm_config_arch: ia32
-          - os: windows-latest
-            target: win32-arm64
-            npm_config_arch: arm
-          - os: ubuntu-latest
-            target: linux-x64
-            npm_config_arch: x64
-          - os: ubuntu-latest
-            target: linux-arm64
-            npm_config_arch: arm64
-          - os: ubuntu-latest
-            target: linux-armhf
-            npm_config_arch: arm
-          - os: ubuntu-latest
-            target: alpine-x64
-            npm_config_arch: x64
-          - os: macos-latest
-            target: darwin-x64
-            npm_config_arch: x64
-          - os: macos-latest
-            target: darwin-arm64
-            npm_config_arch: arm64
-          - os: ubuntu-latest
-            target: universal
+        os: [macos-latest, ubuntu-latest, windows-latest]
+        # Use the following if you need to build for more specific platforms
+        # Make sure to comment out the "os" line above here/below "matrix"
+        # include:
+        #   - os: windows-latest
+        #     target: win32-x64
+        #     npm_config_arch: x64
+        #   - os: windows-latest
+        #     target: win32-ia32
+        #     npm_config_arch: ia32
+        #   - os: windows-latest
+        #     target: win32-arm64
+        #     npm_config_arch: arm
+        #   - os: ubuntu-latest
+        #     target: linux-x64
+        #     npm_config_arch: x64
+        #   - os: ubuntu-latest
+        #     target: linux-arm64
+        #     npm_config_arch: arm64
+        #   - os: ubuntu-latest
+        #     target: linux-armhf
+        #     npm_config_arch: arm
+        #   - os: ubuntu-latest
+        #     target: alpine-x64
+        #     npm_config_arch: x64
+        #   - os: macos-latest
+        #     target: darwin-x64
+        #     npm_config_arch: x64
+        #   - os: macos-latest
+        #     target: darwin-arm64
+        #     npm_config_arch: arm64
+        #   - os: ubuntu-latest
+        #     target: universal
     runs-on: ${{ matrix.os }}
     needs: test
     steps:
