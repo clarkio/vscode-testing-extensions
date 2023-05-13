@@ -111,6 +111,9 @@ jobs:
           path: '*.vsix'
 
   release:
+    permissions:
+      contents: write
+      packages: write
     # Publish the extension to the marketplace
     # This will only run on push to main
     # Note: PRs that get merged into main count as a push too
