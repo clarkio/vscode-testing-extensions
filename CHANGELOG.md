@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/clarkio/vscode-testing-extensions/compare/v1.0.1...v1.1.0) (2023-05-13)
+
+
+### Features
+
+* add better launch options and tasks ([5b171d4](https://github.com/clarkio/vscode-testing-extensions/commit/5b171d46750a46e0c9535e499305c7bedd0ff50e))
+
 ## [1.0.1](https://github.com/clarkio/vscode-testing-extensions/compare/v1.0.0...v1.0.1) (2023-05-13)
 
 
