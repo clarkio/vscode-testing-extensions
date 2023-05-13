@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/clarkio/vscode-testing-extensions/compare/v1.0.0...v1.0.1) (2023-05-13)
+
+
+### Bug Fixes
+
+* adjust pipeline for less platforms ([bfea547](https://github.com/clarkio/vscode-testing-extensions/commit/bfea547b9357225032c174359d83709f96c67b6f))
+
 # 1.0.0 (2023-05-13)
 
 
